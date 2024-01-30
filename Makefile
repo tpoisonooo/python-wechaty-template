@@ -6,7 +6,6 @@ build:
 
 .PHONY: dockerrun
 dockerrun:
-	docker stop bot && docker rm bot
 	docker run -it -d -v $(P):/bot --name bot -p 8004:8004 py-wechaty-template-bot:latest
 
 .PHONY: bot 

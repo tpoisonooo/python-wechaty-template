@@ -20,12 +20,12 @@ if __name__ == "__main__":
     bot = Wechaty(options)
     bot.use([
         DingDongPlugin(),
-        RepeaterPlugin(),
-        InfoLoggerPlugin(),
-        CounterPlugin(),
-        UICounterPlugin(),
-        GithubMessageForwarderPlugin(
-            endpoint=os.environ.get('github_endpoint', None) or "your-custom-endpoint"
-        ),
+#        RepeaterPlugin(),
+#        InfoLoggerPlugin(),
+#        CounterPlugin(),
+#        UICounterPlugin(),
+#        GithubMessageForwarderPlugin(
+#            endpoint=os.environ.get('github_endpoint', None) or "your-custom-endpoint"
+#        ),
     ])
     asyncio.run(bot.start())
