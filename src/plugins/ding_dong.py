@@ -26,7 +26,10 @@ class DingDongPlugin(WechatyPlugin):
 
         # 发起 POST 请求
         response = requests.post(url, data=data_json, headers=headers, timeout=200)
-        await msg.say(response.text)
+        response_text = json.loads(response.text)
+        reply_value = response_text.get("reply", "")
+        if reply_value:
+            await msg.say(reply_value)
 
         message_controller.disable_all_plugins(msg)
 
